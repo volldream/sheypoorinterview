@@ -17,7 +17,6 @@ RUN apt-get install -y \
     nginx \
     vim \
     php7.2-fpm \
-    openssh-server \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

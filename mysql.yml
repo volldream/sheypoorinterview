@@ -5,9 +5,14 @@
 
   tasks:
   - name: Install mysql
-    apt:
-      name: mysql-server
-      state: present
+    action: apt pkg=$item state=installed
+  - with_items:
+      - mysql-server-core-5.5
+      - mysql-client-core-5.5
+      - libmysqlclient-dev
+      - python-mysqldb
+      - mysql-server
+      - mysql-client  
 
   - name: Start mysql service
     service:
