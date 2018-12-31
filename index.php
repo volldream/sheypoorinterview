@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<!-- -->
+<!-- test -->
 <?php
 echo "hi There Php working properly";
 $servername = "localhost:3307";
