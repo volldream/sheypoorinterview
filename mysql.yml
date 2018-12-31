@@ -1,0 +1,25 @@
+---
+- name: Install mysql
+  hosts: mysql
+  become: true
+
+  tasks:
+  - name: Install mysql
+    apt:
+      name: mysql-server
+      state: present
+
+  - name: Start mysql service
+    service:
+      name: mysqld
+      state: pstarted
+
+  - name: Reconfigure Ansible
+    copy:
+      src: ~/my.cnf 
+      dest: /etc/mysql/my.cnf
+
+  - name: Restart Mysql server
+    service:
+      name: mysqld
+      state: restarted
